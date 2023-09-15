@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="image_src" href="img/logo_green-min.png">
+    <link rel="icon" type="image/jpeg" href="favicon/favicon_talantariy_green.png">
+    <!-- <link rel="icon" type="image/jpeg" sizes="96x96" href="/favicon/favicon_talantariy_green_96.png">
+    <link rel="icon" type="image/jpeg" sizes="64x64" href="/favicon/favicon_talantariy_green_64.png"> -->
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="favicon/favicon_talantariy_green_32.png">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="favicon/favicon_talantariy_green_16.png">
+
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Талантарий — Развиваемся Играя">
+    <meta property="og:description" content="Детцкий центр “Талантарий” в Одинцово-1. Играем, учимся, растём - всё в одном месте!">
+
+    <meta property="og:url" content="https://talantariy.ru/">
+    <meta property="og:image" content="https://talantariy.ru/img/logo_talantariy_green.jpg">
+    <meta property="og:site_name" content="Талантарий — Развиваемся Играя">
+    
+    <meta itemprop="name" content="Талантарий — Развиваемся Играя">
+    <meta itemprop="description" content="Детцкий центр “Талантарий” в Одинцово-1. Играем, учимся, растём - всё в одном месте!">
+    <meta itemprop="image" content="https://talantariy.ru/img/logo_talantariy_green.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@talantariy.ru">
+
+    <meta name="twitter:title" content="Талантарий — Развиваемся Играя">
+    <meta name="twitter:description" content="Детцкий центр “Талантарий” в Одинцово-1. Играем, учимся, растём - всё в одном месте!">
+    <meta name="twitter:image" content="https://talantariy.ru/img/logo_talantariy_green.jpg">
+    <title>Талантарий</title>
+</head>
+<body class="body__cabinet">
+    <!-- <div class="container"> -->
+    <div class="header header_blue changeThema scrollto">
+        <nav class="header__container">
+            <a class="logo logo_blue header__logo changeThema" href="/">
+                <img class="logo__img" src="img/logo_blue-min.webp" alt="Логотип">
+            </a>
+            <div class="header__topbar topbar">
+                <div class="topbar__menu"></div>
+                <div class="thema">
+                    <img class="thema__img" src="icons/setting.png" alt="Настройки">
+                    <!-- <a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by Freepik - Flaticon</a> -->
+                    <ul class="thema__menu thema__menu_blue changeThema">
+                        <li><label for="blue" class="thema__item thema__blue">Тема: Blue</label></li>
+                        <li><label for="green" class="thema__item thema__green">Тема: Green</label></li>
+                        <li><label for="white" class="thema__item thema__white">Тема: White</label></li>
+                    </ul>
+                    <input type="radio" class="hidden" name="thema" id="blue" value="blue">
+                    <input type="radio" class="hidden" name="thema" id="green" value="green">
+                    <input type="radio" class="hidden" name="thema" id="white" value="white">
+                </div>
+                <div class="messengers">
+                    <a href="https://t.me/TalantariyBot" target="_blank"><img src="icons/icon_telegram.svg" alt="телеграмм" class="messengers__icon"></a>
+                    <img src="icons/icon_instagram.svg" alt="инстраграмм" class="messengers__icon">
+                    <img src="icons/icon_whatsapp.svg" alt="whatsapp" class="messengers__icon">
+                </div>
+            </div>
+            <div class="header__btn header__btn_blue btn changeThema">
+                <a class="btn__link" href="/#our-contacts">Записаться</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="section-even section-even_blue changeThema cabinet ">
+        <div class="cabinet__container">
+            <ul class="sidebar">
+                <a class="sidebar__item sidebar__item_active" href="cabinet.html#account"><img src="icons/icon_cabinet.svg" alt="иконка" class="sidebar__icon">Личный кабинет</a>
+                <a class="sidebar__item" href="cabinet.html#teachers"><img src="icons/icon_teacher.svg" alt="иконка" class="sidebar__icon">Мои преподаватели</a>
+                <a class="sidebar__item" href="cabinet.html#my-lessons"><img src="icons/icon_lesson.svg" alt="иконка" class="sidebar__icon">Уроки</a>
+                <a class="sidebar__item" href="cabinet.html#payment"><img src="icons/icon_payment.svg" alt="иконка" class="sidebar__icon">Оплата</a>
+                <a class="sidebar__item" href="cabinet.html#my-schedule"><img src="icons/icon_schedule.svg" alt="иконка" class="sidebar__icon">Расписание</a>
+                <a class="sidebar__item" href="cabinet.html#settings"><img src="icons/icon_settings.svg" alt="иконка" class="sidebar__icon">Настройки</a>
+            </ul>
+
+            <div class="info cabinet__chapter account">
+                <div class="marker" id="account"></div>
+                <div class="info__account">
+                    <div class="account__photo"></div>
+                    <div class="account__name">Иванов Иван Иванович</div>
+                    <div class="account__descr">
+                        Телефон: +7 ХХХ ХХХ ХХ ХХ<br>
+                        Почта: ivanov.i.i.@yandex.ru<br>
+                        Способ связи: телеграм<br>
+                        Напоминания: за час до урока
+                    </div>
+                </div>                
+
+            </div>
+
+            <div class="teachers cabinet__chapter teachers hidden">
+                <div class="marker" id="teachers"></div>
+                teachers
+
+            </div>
+
+            <div class="my-lessons cabinet__chapter my-lessons hidden">
+                <div class="marker" id="my-lessons"></div>my-lessons</div>
+
+            <div class="payment cabinet__chapter payment hidden">
+                <div class="marker" id="payment"></div>payment</div>
+
+            <div class="my-schedule cabinet__chapter my-schedule hidden">
+                <div class="marker" id="my-schedule"></div>my-schedule</div>
+
+            <div class="settings cabinet__chapter settings hidden">
+                <div class="marker" id="settings"></div>settings</div>
+        </div>
+    </div>
+    
+
+    <footer class="footer footer_blue changeThema">
+        <div class="footer__block">
+            <div class="footer__logo">
+                <a class="logo logo_blue header__logo changeThema" href="/">
+                    <img class="logo__img" src="img/logo_blue-min.webp" alt="Логотип">
+                </a>
+                <p class="footer__text footer__text_blue changeThema">Талантарий, 2023</p>
+            </div>
+            <p class="footer__text footer__text_blue changeThema">Правила центра</p>
+            <p class="footer__text footer__text_blue changeThema">Договор-оферта</p>
+            <p class="footer__text footer__text_blue changeThema">Пользовательское соглашение</p>
+            <p class="footer__text footer__text_blue changeThema">Политика конфиденциальности</p>
+        </div>
+
+        <ul class="footer__menu">
+            <li><a class="footer__menu-item footer__menu-item_blue changeThema" href="/">Главная</a></li>
+            <li><a class="footer__menu-item footer__menu-item_blue changeThema" href="/#benefits">Преимущества</a></li>
+            <li><a class="footer__menu-item footer__menu-item_blue changeThema" href="/#lessons">Занятия</a></li>
+            <li><a class="footer__menu-item footer__menu-item_blue changeThema" href="/#our-schedule">Расписание</a></li>
+            <li><a class="footer__menu-item footer__menu-item_blue changeThema" href="/#teams">Команда</a></li>
+            <li><a class="footer__menu-item footer__menu-item_blue changeThema" href="/#news">Новости и события</a></li>
+            <li><a class="footer__menu-item footer__menu-item_blue changeThema" href="/#photos">Фотогалерея</a></li>
+            <li><a class="footer__menu-item footer__menu-item_blue changeThema" href="/#our-contacts">Контакты</a></li>
+            <li><a class="footer__menu-item footer__menu-item_blue changeThema" href="./cabinet.html#account">Личный кабинет</a></li>
+            
+            <div class="messengers">
+                <a href="https://t.me/TalantariyBot" target="_blank"><img src="icons/icon_telegram.svg" alt="телеграмм" class="messengers__icon"></a>
+                <img src="icons/icon_instagram.svg" alt="инстраграмм" class="messengers__icon">
+                <img src="icons/icon_whatsapp.svg" alt="whatsapp" class="messengers__icon">
+            </div>
+        </ul>
+    </footer>
+
+    <script src="js/main_v0.1.8.js"></script>
+</body>
+</html>

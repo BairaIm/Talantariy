@@ -1,0 +1,24 @@
+.personCard
+    display: flex
+    flex-direction: column
+    width: 20rem
+    height: 41rem
+    @include respond(mini-phone)
+        width: 14rem
+        height: 38rem
+    &__photo
+        width: 100%
+        height: 30rem
+        background: darkgrey
+        @include respond(mini-phone)
+            height: 21rem
+    &__img
+        max-width: 100%
+        max-height: 100%
+    &__name
+        color: black
+    &__text
+        color: $colorTextGrey
+    &_empty
+        opacity: 0
+

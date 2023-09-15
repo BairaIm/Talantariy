@@ -1,0 +1,56 @@
+.subjects
+    display: flex
+    justify-content: space-evenly
+    flex-wrap: wrap
+    gap: 3rem 4rem
+    padding: 1rem
+
+.subjectCard
+    position: relative
+    transition: all 0.25s ease-out
+    width: 30rem
+    min-height: 15rem
+    border-radius: 3rem
+    text-decoration: none
+    padding: 1rem 1rem 6.5rem
+    cursor: pointer
+    &__title
+        color: $colorTextDark
+    &__text
+        color: $colorTextBase
+    &__icon
+        max-width: 5.5rem
+        max-height: 5.5rem
+        position: absolute
+        bottom: 1rem
+        left: 50%
+        transform: translateX(-50%)
+    &_empty
+        cursor: auto
+        opacity: 0
+    &:hover
+        transform: scale(1.1)
+        box-shadow: 0.1rem 0.1rem black
+
+
+.subjectCard_blue
+    background-color: $backgroundCardMedium
+    box-shadow: 0.1rem 0.1rem $backgroundCardDark
+    &:hover
+        background-color: $backgroundCardDark
+    &:hover h3, p
+        color: $colorTextWhite
+
+.subjectCard_green
+    background-color: $backgroundCardMediumGreen
+    box-shadow: 0.1rem 0.1rem $backgroundCardDarkGreen
+    &:hover
+        background-color: $backgroundCardDarkGreen
+    &:hover h3, p
+        color: $colorTextWhite
+
+.subjectCard_white
+    background-color: $backgroundCardLightWhite
+    border: 4px solid #B0CB1F
+    &:hover
+        border-color: #164E63

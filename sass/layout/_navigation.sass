@@ -1,0 +1,58 @@
+.navigation
+    display: none
+    @include respond(tab-land)
+        display: none
+    @include respond(tab-port)
+        display: block
+    @include respond(big-screen)
+        display: none
+    &__toggle
+        display: none
+    &__button
+        height: 7rem
+        width: 7rem
+        border-radius: 50%
+        text-align: center
+        cursor: pointer
+        &_blue
+            background-color: $backgroundHeader
+        &_green
+            background-color: $backgroundHeaderGreen
+        &_white
+            background-color: $backgroundHeaderWhite
+    &__icon
+        position: relative
+        margin-top: 2.5rem
+        cursor: pointer
+        &, &::before, &::after
+            width: 3rem
+            height: .3rem
+            background: black
+            display: inline-block
+        &::before, &::after
+            content: ""
+            position: absolute
+            left: 0
+            transition: .2s all
+        &::before
+            top: -1rem
+        &::after
+            top: 1rem
+
+    &__button:hover &__icon::before
+        top: -1.2rem
+    &__button:hover &__icon::after
+        top: 1.2rem
+    
+    &__toggle:checked + &__button_blue &__icon
+        background-color: $backgroundHeader
+    &__toggle:checked + &__button_green &__icon
+        background-color: $backgroundHeaderGreen
+    &__toggle:checked + &__button_white &__icon
+        background-color: $backgroundHeaderWhite
+    &__toggle:checked + &__button &__icon::before
+        top: 0
+        transform: rotate(-135deg)
+    &__toggle:checked + &__button &__icon::after
+        top: 0
+        transform: rotate(135deg)

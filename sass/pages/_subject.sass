@@ -1,0 +1,52 @@
+.subject
+    flex-shrink: 1
+    flex-grow: 1
+    color: $colorTextBase
+    &__container
+        padding: 4rem 3rem
+        width: $maxWidth
+        max-width: 100%
+        margin: 0 auto
+        overflow: hidden
+    &__declaration
+        width: 100%
+        display: flex
+        flex-direction: column
+    &__info
+        display: flex
+        width: 100%
+        gap: 3rem
+        margin-bottom: 3rem
+        justify-content: space-between
+    &__caption
+        display: flex
+        align-items: center
+    &__icon
+        width: 12rem
+        height: auto
+        opacity: 15%
+    &__title
+        margin-bottom: 2rem
+    &__text
+        line-height: 3rem
+        margin-bottom: 1rem
+    &__btn
+        color: $colorTextWhite
+        box-shadow: 0.1rem 0.1rem $backgroundCardDark
+        display: block
+        margin: 0 auto
+        &_blue
+            background-color: $backgroundCardMedium
+        &_green
+            background-color: $backgroundCardMedium
+        &_white
+            background-color: $backgroundCardDarkWhite
+        &:hover
+            background-color: $backgroundCardDark
+            box-shadow: 0.1rem 0.1rem black
+    &__photo
+        width: 45rem
+        height: 30rem
+        background-color: grey
+        flex-shrink: 0
+        flex-grow: 0

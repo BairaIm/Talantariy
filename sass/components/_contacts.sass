@@ -1,0 +1,53 @@
+.contacts
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+    font-size: 2.6rem
+    color: $colorTextDark
+    line-height: 3.5rem
+    &__feedback
+        width: 40rem
+    &__feedback-form
+        width: 100%
+        padding: 2rem 3rem
+        display: flex
+        flex-direction: column
+        gap: 3rem
+        justify-content: space-between
+        align-items: center
+    &__feedback-input
+        width: 100%
+        border-radius: 3rem
+        padding: 2rem 3rem
+        border: 1px solid grey
+        resize: none
+        font-size: $fontSizeText
+        &_blue
+            background-color: $backgroundCardLight
+        &_green
+            background-color: $backgroundCardLightGreen
+        &_white
+            background-color: $backgroundCardLightWhite
+    &__feedback-btn
+        color: $colorTextWhite
+        box-shadow: 0.1rem 0.1rem $backgroundCardDark
+        width: 20rem
+        &_blue
+            background-color: $backgroundCardMedium
+        &_green
+            background-color: $backgroundCardMedium
+        &_white
+            background-color: $backgroundCardDarkWhite  
+        &_active
+            background-color: $backgroundCardDark
+        &:hover
+            background-color: $backgroundCardDark
+            box-shadow: 0.1rem 0.1rem black
+    &__adresse
+        text-align: left
+        width: 45rem
+    &__map
+        width: 45rem
+        height: 36rem
+        border: 2px solid $backgroundDark
+        border-radius: 3rem

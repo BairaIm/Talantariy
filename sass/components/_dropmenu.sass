@@ -1,0 +1,42 @@
+.dropmenu
+    display: flex
+    flex-direction: column
+    gap: 2rem
+    position: fixed
+    top: 7rem
+    width: 43rem
+    height: 100vh
+    z-index: 3
+    animation-name: RightToLeft
+    animation-duration: 1s
+    color: $colorTextBase
+    &__menu
+        width: 100%
+        transition: all 1s ease-out
+        padding: 1rem 2rem
+        text-decoration: none
+        flex-direction: column
+        display: flex
+        & :not(:last-child)
+            margin-bottom: 2rem
+    &_blue
+        background-color: $backgroundBase
+    &_green
+        background-color: $backgroundWhite
+        border-top: 1px solid black
+    &_white
+        background-color: $backgroundWhite
+    &__item
+        text-decoration: none
+        font-size: 2.8rem
+        color: $colorTextBase
+        &:hover
+            color: $colorTextDark
+            border-bottom: 3px solid $colorTextDark
+    &__btn
+        padding: 2rem 4rem
+        align-self: center
+    &__title
+        align-self: center
+        text-align: center
+        font-size: 2.5rem

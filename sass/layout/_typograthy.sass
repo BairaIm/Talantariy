@@ -1,0 +1,42 @@
+.h1-title
+    margin: 0
+    padding: 0
+    font-size: $fontSizeH1Big
+    @include respond(tab-port)
+        font-size: $fontSizeH1Small
+    @include respond(phone)
+        font-size: $fontSizeH1Mini
+    color: $colorTextBase
+    width: 100%
+    &_blue
+        color: $colorTextBlue
+    &_green
+        color: $colorTextBlue
+    &_white
+        color: $colorTextWhite
+
+.h1-span
+    &_blue
+        color: $colorTextGreen
+    &_green
+        color: $colorTextGreen
+    &_white
+        color: $colorTextDark
+
+.section-title
+    font-size: $fontSizeH2Big
+    @include respond(tab-port)
+        font-size: $fontSizeH2Small
+    @include respond(phone)
+        font-size: $fontSizeH2Mini
+    color: $colorTextBase
+    width: 100%
+    margin-bottom: 2rem
+
+.card-title
+    font-size: $fontSizeH3
+    line-height: 3.0rem
+
+.card-text
+    font-size: $fontSizeText
+    line-height: 2.5rem

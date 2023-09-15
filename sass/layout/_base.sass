@@ -1,0 +1,35 @@
+*, ::after, ::before
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font-size: 62.5%
+    @include respond(tab-land)
+        font-size: 56.25%
+    @include respond(tab-port)
+        font-size: 50%
+    @include respond(phone)
+        font-size: 40%
+    @include respond(big-screen)
+        font-size: 75%
+
+
+body
+    width: 100%
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    font-family: 'Arial', sans-serif
+
+.container
+    margin-top: 6rem
+    width: $maxWidth
+    max-width: 100%
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    margin: 0 auto
+    overflow: hidden
