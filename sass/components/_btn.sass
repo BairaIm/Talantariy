@@ -1,4 +1,8 @@
 .btn
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
     position: relative
     border: none
     border-radius: 2rem
@@ -8,14 +12,9 @@
     font-size: $fontSizeText
     cursor: pointer
     transition: all 0.35s ease-out
-    vertical-align: center
     &__link
         text-decoration: none
         color: $colorTextBase
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
         font-size: $fontSizeH3
     &:hover
         transform: scale(1.1)

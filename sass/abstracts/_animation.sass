@@ -6,18 +6,38 @@
 
 @keyframes LeftToRight
     0%
-        opacity: 0
         transform: translate(0rem)
-    80%
-        transform: translate(2rem)
     100%
-        opacity: 1
-        transform: translate(-20rem)
+        transform: translate(100%)
 
-@keyframes RightToLeft
+@keyframes RightToLeftMenu
     0%
         transform: translate(100vw)
     80%
         transform: translate(-1rem)
+    100%
+        transform: translate(0)
+
+@keyframes RightToLeftSlideFirst
+    0%
+        transform: translate(100%)
+    100%
+        transform: translate(0)
+
+@keyframes RightToLeftSlideSecond
+    0%
+        transform: translate(100%)
+    100%
+        transform: translate(0)
+
+@keyframes LeftToRightSlideFirst
+    0%
+        transform: translate(-100%)
+    100%
+        transform: translate(0)
+
+@keyframes LeftToRightSlideSecond
+    0%
+        transform: translate(-100%)
     100%
         transform: translate(0)

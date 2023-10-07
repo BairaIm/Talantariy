@@ -1,0 +1,23 @@
+.price-table
+    display: grid
+    gap: 1px
+    border: none
+    grid-template-columns: minmax(15rem, 1fr) repeat(4, minmax(min-content, 1fr))
+    grid-template-areas:  "start ticket ticket ticket ticket" "subject one four eight twelve"
+    color: $colorTextDark
+    &__header-item
+        grid-row: ticket / span 1
+        padding: 1rem
+        border: none
+    &__item
+        padding: 1rem
+        font-size: 1.6rem
+        line-height: 2.0rem
+        border-top: 2px solid $colorTextDark
+    &__title
+        padding: 1rem
+        grid-column: subject / span 1
+        border-top: 2px solid $colorTextDark
+        a
+            text-decoration: none
+            color: $colorTextBase

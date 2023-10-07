@@ -8,6 +8,7 @@
         // border-bottom: 1px solid darkgrey
 
 .section-even
+    position: relative
     &_blue
         background-color: $backgroundMedium
     &_green
@@ -23,6 +24,7 @@
     margin: 0 auto
     overflow: hidden
     text-align: center
+    scroll-behavior: smooth
 
 .section-head
     display: flex
@@ -63,8 +65,10 @@
         top: -1.5rem
         width: 35rem
         padding: 2rem 1rem
-        color: $colorTextWhite
         background-color: $backgroundCardDark
+    &__link
+        text-decoration: none
+        color: $colorTextWhite
         font-size: $fontSizeH3
     &__btn-icon
         max-height: 10rem
@@ -83,8 +87,9 @@
     display: flex
     flex-wrap: wrap
     justify-content: space-evenly
-    gap: 1rem
+    gap: 2rem 1rem
     &__benefit
+        margin-top: 2rem
         width: 100%
         padding: 3rem
         color: $colorTextBase

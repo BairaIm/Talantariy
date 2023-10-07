@@ -1,17 +1,18 @@
 .personCard
     display: flex
     flex-direction: column
-    width: 20rem
+    width: 25rem
     height: 41rem
+    border: 1px solid #B0CB1F
+    transition: all 0.5s ease-in-out
     @include respond(mini-phone)
-        width: 14rem
-        height: 38rem
+        width: 20rem
+        height: 36rem
     &__photo
         width: 100%
-        height: 30rem
-        background: darkgrey
+        height: 25rem
         @include respond(mini-phone)
-            height: 21rem
+            height: 20rem
     &__img
         max-width: 100%
         max-height: 100%
@@ -21,4 +22,7 @@
         color: $colorTextGrey
     &_empty
         opacity: 0
+    &:hover
+        transform: scale(1.1)
+        cursor: pointer
 

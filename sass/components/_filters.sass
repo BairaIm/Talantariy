@@ -5,10 +5,43 @@
     flex-wrap: wrap
 
 .filter
+    position: relative
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
     color: $colorTextGrey
     background-color: $backgroundLight
     border: .1rem solid $backgroundMedium
     padding: 0 1rem
-    width: 16rem
+    width: 19rem
+    &__menu
+        display: none
+        position: absolute
+        top: 3rem
+        left: 0
+        padding: 1rem
+        border-top: 1px solid $backgroundMedium
+        background-color: $backgroundLight
+        width: 100%
+        flex-direction: column
+        & :not(:last-child)
+            margin-bottom: 1rem
+    &__item
+        display: flex
+        gap: 1rem
+        font-size: $fontSizeText
+    &__wrapper-btn
+        width: 100%
+        text-align: center
+        padding: 2rem
+    &__btn
+        margin: 0 auto
+        color: $colorTextWhite
+        &_blue
+            background-color: $backgroundCardMedium
+        &_green
+            background-color: $backgroundCardMedium
+        &_white
+            background-color: $backgroundCardDarkWhite  
+    &:hover &__menu
+        display: flex

@@ -7,11 +7,13 @@
     &__header-item
         grid-row: day / span 1
         border: 1px solid $backgroundCardDark
+        padding: 1rem
         &_blue
             background-color: $backgroundMedium
         &_green
             background-color: $backgroundMedium
         &_white
+            color: $colorTextWhite
             background-color: $backgroundCardDarkWhite
     &__item
         background-color: $backgroundLight
@@ -19,6 +21,9 @@
         line-height: 2.0rem
         padding: 0.5rem
         border: 1px solid $backgroundCardDark
+        a
+            text-decoration: none
+            color: $colorTextBase
     &__time
         grid-column: time / span 1
         border: 1px solid $backgroundCardDark
@@ -29,7 +34,7 @@
         &_white
             background-color: $backgroundBaseWhite
     &__item-D1-9
-        grid-area: D1-9
+        grid-row: D1-9 / span 3
     &__item-D1-10
         grid-area: D1-10
     &__item-D1-11

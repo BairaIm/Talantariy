@@ -2,14 +2,21 @@
     display: flex
     flex-direction: column
     gap: 2rem
-    position: fixed
-    top: 7rem
-    width: 43rem
-    height: 100vh
-    z-index: 3
-    animation-name: RightToLeft
-    animation-duration: 1s
+    width: 100%
+    height: 100%
     color: $colorTextBase
+    overflow-y: scroll
+    &__wrapper
+        position: fixed
+        top: 0
+        bottom: 0
+        padding-top: 7rem
+        width: 43rem
+        height: 100vh
+        min-heigth: 60rem
+        z-index: 3
+        animation-name: RightToLeftMenu
+        animation-duration: 1s
     &__menu
         width: 100%
         transition: all 1s ease-out
@@ -26,17 +33,18 @@
         border-top: 1px solid black
     &_white
         background-color: $backgroundWhite
-    &__item
+    &__menu-item
         text-decoration: none
-        font-size: 2.8rem
+        font-size: 2.5rem
         color: $colorTextBase
         &:hover
             color: $colorTextDark
             border-bottom: 3px solid $colorTextDark
     &__btn
+        font-size: $fontSizeH3
         padding: 2rem 4rem
         align-self: center
     &__title
         align-self: center
         text-align: center
-        font-size: 2.5rem
+        font-size: $fontSizeH3
