@@ -420,6 +420,9 @@ template {
   }
 }
 .btn {
+  text-decoration: none;
+  color: #164E63;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -604,6 +607,9 @@ template {
 }
 .personCard_empty {
   opacity: 0;
+  width: 25rem;
+  height: 41rem;
+  border: 1px solid #B0CB1F;
 }
 .personCard:hover {
   transform: scale(1.1);
@@ -615,6 +621,8 @@ template {
   flex-direction: column;
   width: 33rem;
   height: 50rem;
+  border: 1px solid #B0CB1F;
+  transition: all 0.5s ease-in-out;
 }
 @media only screen and (max-width: 900px) {
   .newsCard {
@@ -630,17 +638,16 @@ template {
 }
 .newsCard__photo {
   width: 100%;
-  height: 42rem;
-  background: darkgrey;
+  height: 40rem;
 }
 @media only screen and (max-width: 900px) {
   .newsCard__photo {
-    height: 38rem;
+    height: 36rem;
   }
 }
 @media only screen and (max-width: 475px) {
   .newsCard__photo {
-    height: 32rem;
+    height: 30rem;
   }
 }
 .newsCard__img {
@@ -654,7 +661,14 @@ template {
   color: rgba(0, 0, 0, 0.5);
 }
 .newsCard_empty {
+  width: 33rem;
+  height: 50rem;
+  border: 1px solid #B0CB1F;
   opacity: 0;
+}
+.newsCard:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .photoCard {
@@ -668,6 +682,8 @@ template {
   max-height: 100%;
 }
 .photoCard_empty {
+  width: 45rem;
+  height: 30rem;
   opacity: 0;
 }
 
@@ -766,10 +782,17 @@ template {
   gap: 1px;
   border: 1px #164E63 solid;
   grid-template-columns: minmax(5rem, 1fr) repeat(7, minmax(min-content, 1fr));
-  grid-template-areas: "start day day day day day day day" "time D1-9 D2-9 D3-9 D4-9 D5-9 D6-9 D7-9" "time D1-10 D2-10 D3-10 D4-10 D5-10 D6-10 D7-10" "time D1-11 D2-11 D3-11 D4-11 D5-11 D6-11 D7-11" "time D1-12 D2-12 D3-12 D4-12 D5-12 D6-12 D7-12" "time D1-13 D2-13 D3-13 D4-13 D5-13 D6-13 D7-13" "time D1-14 D2-14 D3-14 D4-14 D5-14 D6-14 D7-14" "time D1-15 D2-15 D3-15 D4-15 D5-15 D6-15 D7-15" "time D1-16 D2-16 D3-16 D4-16 D5-16 D6-16 D7-16" "time D1-17 D2-17 D3-17 D4-17 D5-17 D6-17 D7-17" "time D1-18 D2-18 D3-18 D4-18 D5-18 D6-18 D7-18" "time D1-19 D2-19 D3-19 D4-19 D5-19 D6-19 D7-19";
+  grid-template-areas: "start day day day day day day day" "time D1-9 D2-9 D3-9 D4-9 D5-9 D6-9 D7-9" "time D1-9_30 D2-9_30 D3-9_30 D4-9_30 D5-9_30 D6-9_30 D7-9_30" "time D1-10 D2-10 D3-10 D4-10 D5-10 D6-10 D7-10" "time D1-10_30 D2-10_30 D3-10_30 D4-10_30 D5-10_30 D6-10_30 D7-10_30" "time D1-11 D2-11 D3-11 D4-11 D5-11 D6-11 D7-11" "time D1-11_30 D2-11_30 D3-11_30 D4-11_30 D5-11_30 D6-11_30 D7-11_30" "time D1-12 D2-12 D3-12 D4-12 D5-12 D6-12 D7-12" "time D1-12_30 D2-12_30 D3-12_30 D4-12_30 D5-12_30 D6-12_30 D7-12_30" "time D1-13 D2-13 D3-13 D4-13 D5-13 D6-13 D7-13" "time D1-13_30 D2-13_30 D3-13_30 D4-13_30 D5-13_30 D6-13_30 D7-13_30" "time D1-14 D2-14 D3-14 D4-14 D5-14 D6-14 D7-14" "time D1-14_30 D2-14_30 D3-14_30 D4-14_30 D5-14_30 D6-14_30 D7-14_30" "time D1-15 D2-15 D3-15 D4-15 D5-15 D6-15 D7-15" "time D1-15_30 D2-15_30 D3-15_30 D4-15_30 D5-15_30 D6-15_30 D7-15_30" "time D1-16 D2-16 D3-16 D4-16 D5-16 D6-16 D7-16" "time D1-16_30 D2-16_30 D3-16_30 D4-16_30 D5-16_30 D6-16_30 D7-16_30" "time D1-17 D2-17 D3-17 D4-17 D5-17 D6-17 D7-17" "time D1-17_30 D2-17_30 D3-17_30 D4-17_30 D5-17_30 D6-17_30 D7-17_30" "time D1-18 D2-18 D3-18 D4-18 D5-18 D6-18 D7-18" "time D1-18_30 D2-18_30 D3-18_30 D4-18_30 D5-18_30 D6-18_30 D7-18_30" "time D1-19 D2-19 D3-19 D4-19 D5-19 D6-19 D7-19" "time D1-19_30 D2-19_30 D3-19_30 D4-19_30 D5-19_30 D6-19_30 D7-19_30";
+}
+.schedule__teacher {
+  font-weight: bold;
+}
+.schedule__teacher:hover {
+  color: darkblue;
+  cursor: pointer;
 }
 .schedule__header-item {
-  grid-row: day/span 1;
+  grid-area: day/span 1;
   border: 1px solid #164E63;
   padding: 1rem;
 }
@@ -794,8 +817,12 @@ template {
   text-decoration: none;
   color: #164E63;
 }
+.schedule__item a:hover {
+  color: darkblue;
+}
 .schedule__time {
   grid-column: time/span 1;
+  grid-row: span 2;
   border: 1px solid #164E63;
 }
 .schedule__time_blue {
@@ -808,235 +835,235 @@ template {
   background-color: #F7FAF0;
 }
 .schedule__item-D1-9 {
-  grid-row: D1-9/span 3;
+  grid-area: D1-9/D1-9/span 2;
 }
 .schedule__item-D1-10 {
-  grid-area: D1-10;
+  grid-area: D1-10/D1-10/span 2;
 }
 .schedule__item-D1-11 {
-  grid-area: D1-11;
+  grid-area: D1-11/D1-11/span 2;
 }
 .schedule__item-D1-12 {
-  grid-area: D1-12;
+  grid-area: D1-12/D1-12/span 2;
 }
 .schedule__item-D1-13 {
-  grid-area: D1-13;
+  grid-area: D1-13/D1-13/span 2;
 }
 .schedule__item-D1-14 {
-  grid-area: D1-14;
+  grid-area: D1-14/D1-14/span 2;
 }
 .schedule__item-D1-15 {
-  grid-area: D1-15;
+  grid-area: D1-15/D1-15/span 2;
 }
 .schedule__item-D1-16 {
-  grid-area: D1-16;
+  grid-area: D1-16/D1-16/span 2;
 }
 .schedule__item-D1-17 {
-  grid-area: D1-17;
+  grid-area: D1-17/D1-17/span 2;
 }
 .schedule__item-D1-18 {
-  grid-area: D1-18;
+  grid-area: D1-18/D1-18/span 2;
 }
 .schedule__item-D1-19 {
-  grid-area: D1-19;
+  grid-area: D1-19/D1-19/span 2;
 }
 .schedule__item-D2-9 {
-  grid-area: D2-9;
+  grid-area: D2-9/D2-9/span 2;
 }
 .schedule__item-D2-10 {
-  grid-area: D2-10;
+  grid-area: D2-10/D2-10/span 2;
 }
 .schedule__item-D2-11 {
-  grid-area: D2-11;
+  grid-area: D2-11/D2-11/span 2;
 }
 .schedule__item-D2-12 {
-  grid-area: D2-12;
+  grid-area: D2-12/D2-12/span 2;
 }
 .schedule__item-D2-13 {
-  grid-area: D2-13;
+  grid-area: D2-13/D2-13/span 2;
 }
 .schedule__item-D2-14 {
-  grid-area: D2-14;
+  grid-area: D2-14/D2-14/span 2;
 }
 .schedule__item-D2-15 {
-  grid-area: D2-15;
+  grid-area: D2-15/D2-15/span 2;
 }
 .schedule__item-D2-16 {
-  grid-area: D2-16;
+  grid-area: D2-16/D2-16/span 2;
 }
 .schedule__item-D2-17 {
-  grid-area: D2-17;
+  grid-area: D2-17/D2-17/span 2;
 }
 .schedule__item-D2-18 {
-  grid-area: D2-18;
+  grid-area: D2-18/D2-18/span 2;
 }
 .schedule__item-D2-19 {
-  grid-area: D2-19;
+  grid-area: D2-19/D2-19/span 2;
 }
 .schedule__item-D3-9 {
-  grid-area: D3-9;
+  grid-area: D3-9/D3-9/span 2;
 }
 .schedule__item-D3-10 {
-  grid-area: D3-10;
+  grid-area: D3-10/D3-10/span 2;
 }
 .schedule__item-D3-11 {
-  grid-area: D3-11;
+  grid-area: D3-11/D3-11/span 2;
 }
 .schedule__item-D3-12 {
-  grid-area: D3-12;
+  grid-area: D3-12/D3-12/span 2;
 }
 .schedule__item-D3-13 {
-  grid-area: D3-13;
+  grid-area: D3-13/D3-13/span 2;
 }
 .schedule__item-D3-14 {
-  grid-area: D3-14;
+  grid-area: D3-14/D3-14/span 2;
 }
 .schedule__item-D3-15 {
-  grid-area: D3-15;
+  grid-area: D3-15/D3-15/span 2;
 }
 .schedule__item-D3-16 {
-  grid-area: D3-16;
+  grid-area: D3-16/D3-16/span 2;
 }
 .schedule__item-D3-17 {
-  grid-area: D3-17;
+  grid-area: D3-17/D3-17/span 2;
 }
 .schedule__item-D3-18 {
-  grid-area: D3-18;
+  grid-area: D3-18/D3-18/span 2;
 }
 .schedule__item-D3-19 {
-  grid-area: D3-19;
+  grid-area: D3-19/D3-19/span 2;
 }
 .schedule__item-D4-9 {
-  grid-area: D4-9;
+  grid-area: D4-9/D4-9/span 2;
 }
 .schedule__item-D4-10 {
-  grid-area: D4-10;
+  grid-area: D4-10/D4-10/span 2;
 }
 .schedule__item-D4-11 {
-  grid-area: D4-11;
+  grid-area: D4-11/D4-11/span 2;
 }
 .schedule__item-D4-12 {
-  grid-area: D4-12;
+  grid-area: D4-12/D4-12/span 2;
 }
 .schedule__item-D4-13 {
-  grid-area: D4-13;
+  grid-area: D4-13/D4-13/span 2;
 }
 .schedule__item-D4-14 {
-  grid-area: D4-14;
+  grid-area: D4-14/D4-14/span 2;
 }
 .schedule__item-D4-15 {
-  grid-area: D4-15;
+  grid-area: D4-15/D4-15/span 2;
 }
 .schedule__item-D4-16 {
-  grid-area: D4-16;
+  grid-area: D4-16/D4-16/span 2;
 }
 .schedule__item-D4-17 {
-  grid-area: D4-17;
+  grid-area: D4-17/D4-17/span 2;
 }
 .schedule__item-D4-18 {
-  grid-area: D4-18;
+  grid-area: D4-18/D4-18/span 2;
 }
 .schedule__item-D4-19 {
-  grid-area: D4-19;
+  grid-area: D4-19/D4-19/span 2;
 }
 .schedule__item-D5-9 {
-  grid-area: D5-9;
+  grid-area: D5-9/D5-9/span 2;
 }
 .schedule__item-D5-10 {
-  grid-area: D5-10;
+  grid-area: D5-10/D5-10/span 2;
 }
 .schedule__item-D5-11 {
-  grid-area: D5-11;
+  grid-area: D5-11/D5-11/span 2;
 }
 .schedule__item-D5-12 {
-  grid-area: D5-12;
+  grid-area: D5-12/D5-12/span 2;
 }
 .schedule__item-D5-13 {
-  grid-area: D5-13;
+  grid-area: D5-13/D5-13/span 2;
 }
 .schedule__item-D5-14 {
-  grid-area: D5-14;
+  grid-area: D5-14/D5-14/span 2;
 }
 .schedule__item-D5-15 {
-  grid-area: D5-15;
+  grid-area: D5-15/D5-15/span 2;
 }
 .schedule__item-D5-16 {
-  grid-area: D5-16;
+  grid-area: D5-16/D5-16/span 2;
 }
 .schedule__item-D5-17 {
-  grid-area: D5-17;
+  grid-area: D5-17/D5-17/span 2;
 }
 .schedule__item-D5-18 {
-  grid-area: D5-18;
+  grid-area: D5-18/D5-18/span 2;
 }
 .schedule__item-D5-19 {
-  grid-area: D5-19;
+  grid-area: D5-19/D5-19/span 2;
 }
 .schedule__item-D6-9 {
-  grid-area: D6-9;
+  grid-area: D6-9/D6-9/span 2;
 }
 .schedule__item-D6-10 {
-  grid-area: D6-10;
+  grid-area: D6-10/D6-10/span 2;
 }
 .schedule__item-D6-11 {
-  grid-area: D6-11;
+  grid-area: D6-11/D6-11/span 2;
 }
 .schedule__item-D6-12 {
-  grid-area: D6-12;
+  grid-area: D6-12/D6-12/span 2;
 }
 .schedule__item-D6-13 {
-  grid-area: D6-13;
+  grid-area: D6-13/D6-13/span 2;
 }
 .schedule__item-D6-14 {
-  grid-area: D6-14;
+  grid-area: D6-14/D6-14/span 2;
 }
 .schedule__item-D6-15 {
-  grid-area: D6-15;
+  grid-area: D6-15/D6-15/span 2;
 }
 .schedule__item-D6-16 {
-  grid-area: D6-16;
+  grid-area: D6-16/D6-16/span 2;
 }
 .schedule__item-D6-17 {
-  grid-area: D6-17;
+  grid-area: D6-17/D6-17/span 2;
 }
 .schedule__item-D6-18 {
-  grid-area: D6-18;
+  grid-area: D6-18/D6-18/span 2;
 }
 .schedule__item-D6-19 {
-  grid-area: D6-19;
+  grid-area: D6-19/D6-19/span 2;
 }
 .schedule__item-D7-9 {
-  grid-area: D7-9;
+  grid-area: D7-9/D7-9/span 2;
 }
 .schedule__item-D7-10 {
-  grid-area: D7-10;
+  grid-area: D7-10/D7-10/span 2;
 }
 .schedule__item-D7-11 {
-  grid-area: D7-11;
+  grid-area: D7-11/D7-11/span 2;
 }
 .schedule__item-D7-12 {
-  grid-area: D7-12;
+  grid-area: D7-12/D7-12/span 2;
 }
 .schedule__item-D7-13 {
-  grid-area: D7-13;
+  grid-area: D7-13/D7-13/span 2;
 }
 .schedule__item-D7-14 {
-  grid-area: D7-14;
+  grid-area: D7-14/D7-14/span 2;
 }
 .schedule__item-D7-15 {
-  grid-area: D7-15;
+  grid-area: D7-15/D7-15/span 2;
 }
 .schedule__item-D7-16 {
-  grid-area: D7-16;
+  grid-area: D7-16/D7-16/span 2;
 }
 .schedule__item-D7-17 {
-  grid-area: D7-17;
+  grid-area: D7-17/D7-17/span 2;
 }
 .schedule__item-D7-18 {
-  grid-area: D7-18;
+  grid-area: D7-18/D7-18/span 2;
 }
 .schedule__item-D7-19 {
-  grid-area: D7-19;
+  grid-area: D7-19/D7-19/span 2;
 }
 
 .slider {
@@ -1234,6 +1261,10 @@ template {
   text-align: center;
   font-size: 2rem;
 }
+.dropmenu__email {
+  text-decoration: none;
+  color: #164E63;
+}
 
 .topbar {
   display: flex;
@@ -1303,7 +1334,23 @@ template {
   line-height: 3.5rem;
 }
 .contacts__feedback {
-  width: 40rem;
+  min-width: 40rem;
+  max-width: 40rem;
+}
+@media only screen and (max-width: 900px) {
+  .contacts__feedback {
+    max-width: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .contacts__feedback {
+    max-width: 80%;
+  }
+}
+@media only screen and (max-width: 475px) {
+  .contacts__feedback {
+    max-width: 90%;
+  }
 }
 .contacts__feedback-form {
   width: 100%;
@@ -1361,6 +1408,10 @@ template {
   height: 36rem;
   border: 2px solid #164E63;
   border-radius: 3rem;
+}
+.contacts__email {
+  text-decoration: none;
+  color: #164E63;
 }
 
 .logo {
@@ -1535,7 +1586,7 @@ template {
   color: #164E63;
 }
 
-.popup-person {
+.popup {
   position: relative;
   margin: 0 auto;
   width: 70%;
@@ -1547,10 +1598,9 @@ template {
   background-color: #F7FAF0;
   overflow-y: scroll;
   padding: 2rem;
-  border-radius: 3rem 0 0 3rem;
 }
-.popup-person__wrapper {
-  padding: 10rem 0;
+.popup__wrapper {
+  padding: 8rem 0;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
@@ -1560,36 +1610,53 @@ template {
   height: 100vh;
   z-index: 4;
 }
-.popup-person__close {
+.popup__close {
   position: absolute;
   top: 2rem;
   right: 2rem;
   background-color: rgba(255, 255, 255, 0);
   border: none;
   font-size: 3rem;
+  cursor: pointer;
 }
-.popup-person__photo {
+.popup__photo {
   display: block;
   margin: 0 auto;
   width: 30rem;
-  height: 30rem;
+  height: auto;
   margin-bottom: 1rem;
 }
-.popup-person__name {
+.popup__name {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
-.popup-person__role {
+.popup__role {
   font-size: 1.8rem;
   margin-bottom: 2rem;
 }
-.popup-person__text {
+.popup__text {
   text-align: justify;
   text-indent: 2rem;
   font-size: 1.8rem;
   line-height: 2.5rem;
   margin-bottom: 1rem;
+}
+
+.october9 {
+  position: absolute;
+  left: 0;
+  bottom: -150px;
+}
+@media only screen and (max-width: 900px) {
+  .october9 {
+    bottom: -50px;
+  }
+}
+@media only screen and (max-width: 475px) {
+  .october9 {
+    bottom: -30px;
+  }
 }
 
 .h1-title {
@@ -1740,6 +1807,8 @@ body {
 .header__btn {
   flex-shrink: 0;
   flex-grow: 0;
+  align-self: center;
+  padding: 1rem;
 }
 .header__btn_blue {
   background-color: #D4E7EB;
@@ -2036,8 +2105,6 @@ body {
   width: 35rem;
   padding: 2rem 1rem;
   background-color: #164E63;
-}
-.section-head__link {
   text-decoration: none;
   color: #FFFDFD;
   font-size: 2rem;

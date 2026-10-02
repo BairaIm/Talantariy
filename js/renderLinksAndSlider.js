@@ -8,7 +8,7 @@ import {
     colors,
     indexActiveColor,
     elementsWithThema
-} from './data.js';
+} from './data.js?v=2310031853';
 
 export {
     renderSliderTeams,
@@ -60,15 +60,15 @@ function renderMenuLinks(nameMenu, links) {
 
     if (nameMenu != 'dropmenu__menu') {
         messengers.innerHTML = `<div class="messengers">
-            <a href="https://t.me/TalantariyBot" target="_blank"><img src="icons/icon_telegram.svg" alt="телеграмм" class="messengers__icon"></a>
-            <img src="icons/icon_instagram.svg" alt="инстраграмм" class="messengers__icon">
+            <a href="https://t.me/Talantariy" target="_blank"><img src="icons/icon_telegram.svg" alt="телеграмм" class="messengers__icon"></a>
+            <a href="https://instagram.com/talantariy?igshid=NTc4MTIwNjQ2YQ==" target="_blank"><img src="icons/icon_instagram.svg" alt="инстраграмм" class="messengers__icon"></a>
             <a href="https://wa.me/message/WKKLULS6YKXGJ1" target="_blank"><img src="icons/icon_whatsapp.svg" alt="whatsapp" class="messengers__icon"></a>
         </div>`;
         menu.append(messengers);
     } else {
         messengers.innerHTML = `<div class="messengers">
-            <a href="https://t.me/TalantariyBot" target="_blank"><img src="icons/icon_telegram.svg" alt="телеграмм" class="messengers__icon_big"></a>
-            <img src="icons/icon_instagram.svg" alt="инстраграмм" class="messengers__icon_big">
+            <a href="https://t.me/Talantariy" target="_blank"><img src="icons/icon_telegram.svg" alt="телеграмм" class="messengers__icon_big"></a>
+            <a href="https://instagram.com/talantariy?igshid=NTc4MTIwNjQ2YQ==" target="_blank"><img src="icons/icon_instagram.svg" alt="инстраграмм" class="messengers__icon_big"></a>
             <a href="https://wa.me/message/WKKLULS6YKXGJ1" target="_blank"><img src="icons/icon_whatsapp.svg" alt="whatsapp" class="messengers__icon_big"></a>
         </div>`;
         menu.parentElement.append(messengers);
@@ -76,10 +76,10 @@ function renderMenuLinks(nameMenu, links) {
 };
 
 function changeSlide(typeSlider, slides, typeBtn) {
-    let numSlide = slides.findIndex((slide) => 
-                slide.classList.contains('slide_active_right') 
+    let numSlide = slides.findIndex((slide) =>
+                slide.classList.contains('slide_active_right')
                 || slide.classList.contains('slide_active_left'));
-                
+
     if (typeBtn == 'next') {
         slides[numSlide].classList.replace(slides[numSlide].classList[1], 'slide_no-active_right');
         numSlide = (numSlide + 1) % slides.length;
@@ -157,7 +157,7 @@ function renderSlider(typeSlider, cntCardInSlide) {
     if (typeSlider != "team" && typeSlider != "news" && typeSlider != "photos") {
         return;
     }
-    
+
     const slider = document.querySelector(`.slider_${typeSlider}`);
     let slides;
     let classCard;
@@ -185,7 +185,7 @@ function renderSlider(typeSlider, cntCardInSlide) {
 
         btnPrev.classList.remove('hidden');
         btnNext.classList.remove('hidden');
-                
+
         btnPrev.addEventListener('click', () => changeSlide(typeSlider, slides, 'prev'));
         btnNext.addEventListener('click', () => changeSlide(typeSlider, slides, 'next'));
     } else {
@@ -198,13 +198,13 @@ function renderSlider(typeSlider, cntCardInSlide) {
         slide.classList.add('slide_no-active_right');
         for (let j  = 0; j < cntCardInSlide; j++) {
             const card = document.createElement('div');
-            card.classList.add(classCard);
             const elem = arrData[i * cntCardInSlide + j];
 
             if (elem) {
-                if (typeSlider == 'team') {
+                if (typeSlider == 'team' || typeSlider == 'news') {
                     card.dataset.id = elem.id;
                 }
+                card.classList.add(classCard);
                 card.innerHTML = renderCard(classCard, elem.photo, elem.name, elem.text);
             } else {
                 card.classList.add(`${classCard}_empty`);

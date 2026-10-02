@@ -6,17 +6,18 @@ import {
     priceTickets,
     subjectsByCategories,
     employees,
+    news,
     colors,
     indexActiveColor,
     elementsWithThema
-} from './data.js';
+} from './data.js?v=2310031853';
 
 export {
     renderCategories,
     renderSchedule,
     renderPrices,
     renderSubjects,
-    renderPerson,
+    renderPopup,
     renderFooter,
     elementsWithThema
 }
@@ -51,7 +52,7 @@ function renderCategories(categoryName, SUBJECT_URL) {
             subjectCard.classList.add('subjectCard');
             subjectCard.classList.add(`subjectCard_${colors[indexActiveColor]}`);
             subjectCard.classList.add('changeThema');
-            
+
             subjectCard.innerHTML = `<h3 class="card-title subjectCard__title">${subject.title}</h3>
             <p class="card-text subjectCard__text">Для детей ${subject.age}</p>
             <img class="subjectCard__icon" src="${subject.icon}" alt="">`;
@@ -77,19 +78,40 @@ function renderSchedule(numRoom, SUBJECT_URL) {
     const schedule = document.querySelector('.schedule');
     const scheduleItems = document.querySelectorAll('.schedule__item');
 
-    scheduleItems.forEach((item) => item.innerText = '');
+    scheduleItems.forEach((item) => item.remove());
     const usedCells = [];
 
     const lessons  = numRoom === 0 ? lessonsInRoom1 : lessonsInRoom2;
     lessons.forEach((lesson) => {
-        for (let i = 0; i < +lesson.duration; i++) {
-            usedCells.push(`D${lesson.day}-${lesson.timeStart + i}`);
+        let start = lesson.timeStart;
+        const indexTime = typeof lesson.timeStart == 'string' ? lesson.timeStart?.indexOf('_') : -1;
+        let duration = lesson.duration; 
+        if (indexTime != -1) {
+            start = +lesson.timeStart.slice(0, indexTime);
+            if (Math.floor(lesson.duration) != lesson.duration) {
+                duration = lesson.duration * 2 - Math.floor(lesson.duration);
+            } else {
+                duration = lesson.duration + 1;
+            }
+        }
+
+        for (let i = 0; i < duration; i++) {
+            usedCells.push(`D${lesson.day}-${start + i}`);
         }
         const item = document.createElement('div');
         item.classList.add('schedule__item');
         item.style.gridColumn = `D${lesson.day}-${lesson.timeStart}`;
-        item.style.gridRow = `D${lesson.day}-${lesson.timeStart} / span ${lesson.duration}`;
-        item.innerHTML = `<a href=${SUBJECT_URL}#${subjects.find((sub) => sub.id == lesson.subjectId).name}>${lesson.subject}</a><br><b>${employees.find((person) => person.id == lesson.empId).name}</b>`;
+        item.style.gridRow = `D${lesson.day}-${lesson.timeStart} / span ${2 * lesson.duration}`;
+        item.innerHTML = `<a href=${SUBJECT_URL}#${subjects.find((sub) => sub.id == lesson.subjectId).name}>${lesson.subject}</a><br>`;
+        const span = document.createElement('span');
+        if (lesson.empId) {
+            const person = employees.find((person) => person.id == lesson.empId);
+            span.classList.add('schedule__teacher');
+            span.innerHTML = person.name;
+            span.dataset.id = person.id;
+            span.addEventListener('click', () => renderPopup(span, 'person'));
+        }
+        item.append(span);
         schedule.append(item);
     });
 
@@ -134,13 +156,14 @@ function renderSubjects(subjectName) {
     document.querySelectorAll('.subject__icon').forEach((icon) => icon.src = subject.icon);
     document.querySelector('.subject__duration').innerHTML = subject.duration;
     document.querySelector('.subject__note').innerHTML = (subject.note) ? `Примечание: ${subject.note}` : '';
+    document.querySelector('.subject__count').innerHTML = (subject.count) ? `${subject.count} человек` : 'до 5 человек';
 
     const priceTicket = priceTickets.find((ticket) => ticket.id == subject.priceId);
     document.querySelector('.subject__price-12').innerHTML = priceTicket.twelve != '-' ? `12 занятий - ${priceTicket.twelve} руб` : '';
     document.querySelector('.subject__price-8').innerHTML = priceTicket.eight != '-' ? `8 занятий   - ${priceTicket.eight} руб` : '';
     document.querySelector('.subject__price-4').innerHTML = priceTicket.four != '-' ? `4 занятия   - ${priceTicket.four} руб` : '';
     document.querySelector('.subject__price-1').innerHTML = priceTicket.one != '-' ? `1 занятие   - ${priceTicket.one} руб` : '';
-    
+
     if (subject.photo) {
         document.querySelector('.subject__photo').src = subject.photo;
     }
@@ -148,28 +171,35 @@ function renderSubjects(subjectName) {
     document.querySelector('.marker').scrollIntoView();
 };
 
-function renderPerson(personCard) {
-    const person = employees.find((person) => person.id == personCard.dataset.id);
-    const wrapper = document.querySelector('.popup-person__wrapper');
+function renderPopup(card, type) {
+    let dataArr;
+    if (type == "person") {
+        dataArr = employees;
+    } else if (type == "news") {
+        dataArr = news;
+    }
+
+    const elem = dataArr.find((elemArr) => elemArr.id == card.dataset.id);
+    const wrapper = document.querySelector('.popup__wrapper');
     wrapper.classList.remove('hidden');
-    
-    wrapper.innerHTML = `<div class="popup-person">
-        <img src="${person.photo}" alt="фото сотрудника" class="popup-person__photo">
-        <p class="popup-person__name">${person.name}</p>
-        <p class="popup-person__role">${person.text}</p>
-        <p class="popup-person__text">${person.descr}</p>
-        <button class="popup-person__close">&#10006;</button>
+
+    wrapper.innerHTML = `<div class="popup">
+        <img src="${elem.photo}" alt="фото сотрудника" class="popup__photo">
+        <p class="popup__name">${elem.name}</p>
+        <p class="popup__role">${elem.text}</p>
+        <p class="popup__text">${elem.descr}</p>
+        <button class="popup__close">&#10006;</button>
     </div>`;
 
-    document.querySelector('.popup-person').focus();
+    document.querySelector('.popup').focus();
 
     wrapper.addEventListener('click', (event) => {
         if (event.target == wrapper) {
             wrapper.classList.add('hidden');
         }
     })
-    
-    document.querySelector('.popup-person__close').addEventListener('click', () => {
+
+    document.querySelector('.popup__close').addEventListener('click', () => {
         wrapper.classList.add('hidden');
     });
 };
@@ -182,16 +212,16 @@ function renderFooter(SUBJECT_URL) {
         if (subjectsByCategories[category]?.length) {
             const div = document.createElement('div');
             div.classList.add('footer__block');
-            
+
             const title = document.createElement('p');
             title.classList.add('footer__title');
             title.classList.add(`footer__title_${colors[indexActiveColor]}`);
             title.classList.add('changeThema');
             title.innerText = categoryNames[category];
-    
+
             div.append(title);
             elementsWithThema.push(title);
-    
+
             for (let subId of subjectsByCategories[category]) {
                 const sub = subjects.find((subject) => subject.id == subId);
                 const text = document.createElement('a');
@@ -200,11 +230,11 @@ function renderFooter(SUBJECT_URL) {
                 text.classList.add('changeThema');
                 text.href = `${SUBJECT_URL}#${sub.name}`;
                 text.innerHTML = sub.title;
-                
+
                 div.append(text);
                 elementsWithThema.push(text);
             }
-    
+
             footer.insertBefore(div, footerMenu);
         } else {
             continue;
