@@ -96,37 +96,37 @@ const photos = [
 ]; // {photo: 'img/side-view-kid-cheating-at-school-test-min.webp'}
 
 const headerLinks = [
-    {href: '/#lessons', title: 'Занятия'},
-    {href: '/#our-schedule', title: 'Расписание'},
-    {href: '/#price', title: 'Цены'},
-    {href: '/#team', title: 'Команда'}, // is displayed only there is an array employess
-    {href: '/#news', title: 'Новости'}, // is displayed only there is an array news
-    {href: '/#our-contacts', title: 'Контакты'}
+    {href: './#lessons', title: 'Занятия'},
+    {href: './#our-schedule', title: 'Расписание'},
+    {href: './#price', title: 'Цены'},
+    {href: './#team', title: 'Команда'}, // is displayed only there is an array employess
+    {href: './#news', title: 'Новости'}, // is displayed only there is an array news
+    {href: './#our-contacts', title: 'Контакты'}
     // {href: './cabinet.html#account', title: 'Личный кабинет'},
 ];
 
 const dropmenuLinks = [
-    {href: '/', title: 'Главная'},
-    {href: '/#benefits', title: 'Преимущества'},
-    {href: '/#lessons', title: 'Занятия'},
-    {href: '/#our-schedule', title: 'Расписание'},
-    {href: '/#price', title: 'Цены'},
-    {href: '/#team', title: 'Команда'}, // is displayed only there is an array employess
-    {href: '/#news', title: 'Новости и события'}, // is displayed only there is an array news
-    {href: '/#photos', title: 'Фотогалерея'}, // is displayed only there is an array photos
-    {href: '/#our-contacts', title: 'Контакты'},
+    {href: './', title: 'Главная'},
+    {href: './#benefits', title: 'Преимущества'},
+    {href: './#lessons', title: 'Занятия'},
+    {href: './#our-schedule', title: 'Расписание'},
+    {href: './#price', title: 'Цены'},
+    {href: './#team', title: 'Команда'}, // is displayed only there is an array employess
+    {href: './#news', title: 'Новости и события'}, // is displayed only there is an array news
+    {href: './#photos', title: 'Фотогалерея'}, // is displayed only there is an array photos
+    {href: './#our-contacts', title: 'Контакты'},
     // {href: './cabinet.html#account', title: 'Личный кабинет'},
 ];
 
 const footerLinks = [
-    {href: '/', title: 'Главная'},
-    {href: '/#benefits', title: 'Преимущества'},
-    {href: '/#lessons', title: 'Занятия'},
-    {href: '/#our-schedule', title: 'Расписание'},
-    {href: '/#price', title: 'Цены'},
-    {href: '/#team', title: 'Команда'}, // is displayed only there is an array employess
-    {href: '/#news', title: 'Новости и события'}, // is displayed only there is an array news
-    {href: '/#photos', title: 'Фотогалерея'}, // is displayed only there is an array photos
-    {href: '/#our-contacts', title: 'Контакты'},
+    {href: './', title: 'Главная'},
+    {href: './#benefits', title: 'Преимущества'},
+    {href: './#lessons', title: 'Занятия'},
+    {href: './#our-schedule', title: 'Расписание'},
+    {href: './#price', title: 'Цены'},
+    {href: './#team', title: 'Команда'}, // is displayed only there is an array employess
+    {href: './#news', title: 'Новости и события'}, // is displayed only there is an array news
+    {href: './#photos', title: 'Фотогалерея'}, // is displayed only there is an array photos
+    {href: './#our-contacts', title: 'Контакты'},
     // {href: './cabinet.html#account', title: 'Личный кабинет'},
 ];
